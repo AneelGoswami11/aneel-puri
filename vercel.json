@@ -4,6 +4,6 @@
     { "src": "aneel-puri/FabricTraningCustomer.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "aneel-puri/FabricTraningCustomer/index.js" }
+    { "src": "/(.*)", "dest": "aneel-puri/FabricTraningCustomer.js" }
   ]
 }
