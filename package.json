@@ -1,4 +1,11 @@
 {
+  
+  "name": "aneel-puri",
+  "version": "1.0.0",
+  "main": "aneel-puri/FabricTraningCustomer.js",
+  "scripts": {
+    "start": "node api/FabricTraningCustomer.js"
+  },
   "dependencies": {
     "express": "^5.1.0"
   }
