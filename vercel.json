@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "builds": [
     { "src": "aneel-puri/FabricTraningCustomer.js", "use": "@vercel/node" }
   ],
