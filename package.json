@@ -2,10 +2,13 @@
   
   "name": "aneel-puri",
   "version": "1.0.0",
-  "main": "aneel-puri/FabricTraningCustomer.js",
+  "main": "FabricTraningCustomer.js",
   "scripts": {
-    "start": "node api/FabricTraningCustomer.js"
+    "start": "node FabricTraningCustomer"
   },
+  "author":"Aneel Puri",
+  "License":"ICS",
+
   "dependencies": {
     "express": "^5.1.0"
   }
