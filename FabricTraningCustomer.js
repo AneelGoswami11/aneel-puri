@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+//const PORT = 3000;
+
+const PORT = process.env.PORT=3000;
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
@@ -12,21 +14,27 @@ let users = [
 ];
 
 let customerDetails = [
-  { openedDate: '1994-05-18', status: 'Active',nominee: "Mr Goswami"},
-  {  openedDate: '1994-05-18', status: 'Active',nominee: "Aneel Puri"}
+  { accountId: 'A0010',openedDate: '1994-05-18', status: 'Active',nominee: "Mr Goswami"},
+  {  accountId: 'A0011',openedDate: '1994-05-18', status: 'Active',nominee: "Aneel Puri"}
 ];
 
 let accountDetails  = [
-  { id: 1,  customerId :"C001" ,accountId: 'A0010', customerDetails:users[0] ,accountType: 'Savings',balance: "20500.75",balance: "B001", details:customerDetails[0]},
-  { id: 1,  customerId :"C002" ,accountId: 'A0011',  customerDetails:users[0] ,account_type: 'Current',balance: "15000",balance: "B001", details:customerDetails[0]}
-];
-
-
-let customerData = [
+  { id: 1, customerId :"C001" ,accountId: 'A0010', accountType: 'Savings',balance: "20000.75",balance: "B001"},
+  { id: 2, customerId :"C001" ,accountId: 'A0011',account_type: 'Current',balance: "150000",balance: "B001"},
+  { id: 3, customerId :"C002" ,accountId: 'A0010', accountType: 'Savings',balance: "50000.75",balance: "B001"},
+  { id: 4, customerId :"C002" ,accountId: 'A0011',account_type: 'Current',balance: "550000",balance: "B001"}
   
 ];
 
-
+ app.get('/account-details/:accountId', (req, res) => {
+  const accountData = customerDetails.find(u => u.accountId === req.params.accountId);
+    if (accountData) {
+        res.json(accountData);
+      } else {
+        res.status(404).json({ message: 'Accounts not found' });
+    }
+  });
+  
   app.get('/api/users', (req, res) => {
     res.json(users);
   });
@@ -35,8 +43,8 @@ let customerData = [
   
 
   app.get('/accounts/customer/:customerId', (req, res) => {
-    const accountData = accountDetails.find(u => u.customerId === req.params.customerId);
-      if (accountData) {
+    const accountData = accountDetails.filter(u => u.customerId === req.params.customerId);
+    if (accountData) {
         res.json(accountData);
       } else {
         res.status(404).json({ message: 'Accounts not found' });
@@ -53,6 +61,7 @@ let customerData = [
     }
   });
 
+  
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
