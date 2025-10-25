@@ -1,9 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "aneel-puri/FabricTraningCustomer.js", "use": "@vercel/node" }
-  ],
+    { "src": "FabricTraningCustomer.js", "use": "@vercel/node" }],
   "routes": [
-    { "src": "/(.*)", "dest": "aneel-puri/FabricTraningCustomer.js" }
-  ]
+    { 
+    "src": "/(.*)",
+    "dest": "FabricTraningCustomer.js" 
+  }]
 }
