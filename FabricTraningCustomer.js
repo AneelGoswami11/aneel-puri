@@ -20,9 +20,9 @@ let customerDetails = [
 
 let accountDetails  = [
   { id: 1, customerId :"C001" ,accountId: 'A0010', accountType: 'Savings',balance: "20000.75",balance: "B001"},
-  { id: 2, customerId :"C001" ,accountId: 'A0011',account_type: 'Current',balance: "150000",balance: "B001"},
+  { id: 2, customerId :"C001" ,accountId: 'A0011',accountType: 'Current',balance: "150000",balance: "B001"},
   { id: 3, customerId :"C002" ,accountId: 'A0010', accountType: 'Savings',balance: "50000.75",balance: "B001"},
-  { id: 4, customerId :"C002" ,accountId: 'A0011',account_type: 'Current',balance: "550000",balance: "B001"}
+  { id: 4, customerId :"C002" ,accountId: 'A0011',accountType: 'Current',balance: "550000",balance: "B001"}
   
 ];
 
